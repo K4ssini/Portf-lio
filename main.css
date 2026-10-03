@@ -1,0 +1,1176 @@
+* 
+{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body
+{
+    background-color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #f34265;
+  color: white;
+}
+
+#carregando
+{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#carregando.cresce
+{
+    transform: scale(100);
+    transition: transform 1s ease;
+}
+
+.estrelinha-gira
+{
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: giraECorSome 2.5s linear;
+    transition: transform 0.4s ease;
+}
+
+#particles-body {
+    position: fixed !important;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0%;
+    z-index: -1;  /* Fica na camada de trás */
+}
+
+#particles-body canvas {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+/* ---------------------------HEADER------------------------------- */
+header
+{
+    position: fixed;
+    top: 0%;
+    left: -250%;
+    width: 15%;
+    height: 100%;
+    z-index: 999;
+    transition: left 0.35s ease;
+    border-right: 5px solid rgba(236, 16, 60, 0.534);
+    box-shadow: 0 2px 5px rgba(236, 16, 60, 0.534);
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+#menu-btn
+{
+    position: fixed;
+    top: 1%;
+    left: 1%;
+    cursor: pointer;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.539);
+    border: none;
+    padding: 2% 2%;
+    border-radius: 4px;
+    transition: left 0.3s ease;
+    background-image: url(casa.png);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header.aberto
+{
+    left: 0;
+}
+
+#menu-cnt
+{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content:space-evenly;
+    
+}
+
+header ul
+{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 33%;
+    font-size: 1.7em;
+    margin-top: 12%;
+}
+
+header a
+{
+    padding: 5px 10px;
+    background: linear-gradient(135deg, #EC103C, #C70830, #9E0424, #6E0117, #42000B);
+    background-size: 200%;
+    text-decoration: none;
+    -webkit-background-clip: text; /* corta o fundo do texto */
+    -webkit-text-fill-color: rgb(61, 61, 61); /* coloca uma cor de fundo no text*/
+    transition: background-position 0.5s ease, -webkit-text-fill-color 0.3s ease;
+}
+
+header a:hover
+{
+    -webkit-text-fill-color: transparent; /* tira a cor para o degrade aparecer */
+    background-position: right center; /* faz ele ir pro lado */
+    animation: Degrade 3s linear infinite;
+}
+
+#switchmode
+{
+    width: 85px;
+    height: 85px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: giraECor 2.5s linear;
+    transition: transform 0.4s ease;
+    background-color: var(--cor-dark);
+    margin-left: 30%;
+    margin-top: 80%;
+}
+
+/* ----------------------------INICIO-------------------------- */
+#Inicio
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    padding-bottom: 35%;
+    margin-bottom: 10%;
+    overflow: hidden;
+}
+
+
+.nomezin
+{
+    font-family: "Amethysta", sans-serif;
+    z-index: 2;
+    margin-top: 30%;
+    font-size: 7em;
+    animation: apareceCor 1.2s 2.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+    opacity: 0;
+}
+
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+    pointer-events: none;
+    /* Faz as partículas sumirem suavemente */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%); 
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+/* ----------------------------Sobremim-------------------------- */
+#SobreMim
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quadradin
+{
+    height: auto;
+    width: 185vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-right: 2%;
+    z-index: 2;
+}
+
+#direita
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 5%;
+    margin-left: 3%;
+}
+
+#resumo p
+{
+    font-size: 1.35rem;
+    text-align: left;
+    line-height: 1.4;
+}
+
+#caixinhas-info
+{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 5%;
+    background-color: white;
+}
+
+.info
+{
+    border: 2px solid rgba(236, 16, 60, 0.534);
+    border-radius: 20px;
+    height: 20vh;
+    width: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    svg
+    {
+       margin-bottom: 5%;
+    }
+    h2
+    {
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+    p
+    {
+        margin-top: 3%;
+        font-size: 1.4rem;
+    }
+}
+
+#pfp
+{
+    background-image: url(euCinco.jpeg);
+    background-position: center;
+    background-repeat:no-repeat;
+    background-position-x: 40%;
+    background-position-y: 90%;
+    background-size: cover;
+    height: 80vh;
+    width: 70vh;
+    margin-left: 15%;
+    border-radius: 1%;
+    box-shadow: 0 2px 5px rgb(236, 16, 60);
+}
+
+/* ----------------------------Skills-------------------------- */
+.tituloSec
+{
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: linear-gradient(270deg, #EC103C, #C70830, #9E0424, #6E0117);
+    background-size: 200%;
+    animation: degradeTitulo 8s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+
+#Skills
+{
+    position: relative;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "SQL . CS"
+    ". JS ."
+    "HTML . CSS";
+    margin-left: 53vh;
+
+    p
+    {
+        font-size: 1.2rem;
+    }
+
+}
+.div-estrela
+{
+    height: 150px;
+    width: 150px;
+    background-color: rgb(236, 16, 60);
+    border: none;
+    cursor: pointer;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transition: transform 0.2s, background-color 0.2s;
+    z-index: 2;
+    animation: flutuando 3s linear infinite;
+}
+.but-estrela.ativa
+{
+    transform: scale(1.15);
+    background-color: rgb(255, 0, 51);
+}
+
+.skill-info
+{
+    display: none;
+    margin-top: 2%;
+    padding: 3%;
+    background: rgba(255, 200, 211, 0.534);
+    border-radius: 6px;
+    width: 30vh;
+    text-align: center;
+}
+.skill-info.ativo
+{
+    display: block;
+    animation: flutuando 3s linear infinite;
+}
+
+#SQL
+{
+    grid-area: SQL;
+    z-index: 2 !important;
+}
+#CS
+{
+    grid-area: CS;
+    z-index: 2 !important;
+}
+#CSS
+{
+    grid-area: CSS;
+    margin-left: -20%;
+    z-index: 2 !important;
+}
+#HTML
+{
+    grid-area: HTML;
+    margin-left: 20%;
+    z-index: 2 !important;
+}
+#JS
+{
+    grid-area: JS;
+    z-index: 2 !important;
+}
+/* ----------------------------Projetos-------------------------- */
+#Projetos
+{
+    margin-top: 20%; 
+    margin-bottom: 10%;
+    z-index: 2;
+}
+
+#projtxt
+{
+    width: 90vh;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-left: 57vh;
+    margin-top: -35vh;
+    z-index: 2;
+}
+#sites
+{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18vh;
+    margin-left: 9vh;
+
+    h3
+    {
+       color:#000000;
+       font-size: 1.6rem;
+       text-align: center;
+       margin-bottom: 2vh;
+       margin-top: 2vh;
+    }
+    p
+    {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-right: 3%;
+        margin-left: 4%;
+        color: #600d2f;
+    }
+    svg
+    {
+        margin-bottom: 2vh;
+        color: #d90657;
+    }
+}
+
+
+.boxSite
+{
+    border: 1px solid rgba(48, 48, 48, 0.311);
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(236, 16, 60, 0.431);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    width: 55vh;
+    z-index: 2;
+}  
+
+.butao-vai
+{
+    padding: 3% 30%;
+    background-color: #d9065760;;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px rgb(236, 16, 60, 0.7);
+    font-size: 1.3rem;
+    color: #d90657;
+    margin-top: 3vh;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+
+#desceplmds
+{
+    margin-top: 5vh;
+}
+
+/* ----------------------------Contato-------------------------- */
+#Contato
+{
+    margin-top: 17%;
+    z-index: 2;
+
+
+    h3
+    {
+        color:#000000;
+        text-align: center;
+        margin-bottom: 2vh;
+        margin-left: 57vh;
+        margin-top: -30vh;
+        font-size: 1.7rem;
+        width: 90vh;
+        height: 10vh;
+    }
+}
+
+#dividir
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+#Contato form
+{
+    display: grid;
+    grid-template-rows: 12% 12% 12% 50%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+    margin-left: 30vh;
+    margin-bottom: 3vh;
+    width: 75vh;
+    height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 2px 9px rgb(236, 16, 60);
+    background-color: white;
+
+}
+
+#Contato input
+{
+    width: 70vh;
+    padding: 1vh;
+    height: 7vh;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+#Contato textarea
+{
+    resize: none;
+    width: 70vh;
+    height: 40vh;
+    padding: 2vh;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+#but-form
+{
+    padding: 3% 30%;
+    background-color: #d9065760;;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: #99063e 1px groove;
+    box-shadow: 0px 8px 16px rgb(236, 16, 60, 0.7);
+    font-size: 1.3rem;
+    color: #d90657;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+
+dialog
+{
+    position: fixed;
+    top: 30vh;
+    left: 50vh;
+    padding: 20px;
+    height: 40vh;
+    width: 90vh;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 0px 9px rgba(160, 0, 32, 0.67);
+    text-align: center;
+
+
+    h2
+    {
+        margin-top: 3vh;
+        font-size: 1.9rem;
+        background: linear-gradient(270deg, #EC103C, #C70830, #9E0424, #6E0117);
+        background-size: 200%;
+        animation: degradeTitulo 8s ease infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+    p
+    {
+        margin-top: 5vh;
+        font-size: 1.5rem;
+    }
+
+    button
+    {
+        padding: 3% 25%;
+        background-color: #d9065760;;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0px 8px 16px rgb(236, 16, 60, 0.7);
+        font-size: 1.3rem;
+        color: #d90657;
+        margin-top: 6vh;
+        margin-bottom: 3%;
+        cursor: pointer;
+    }
+}
+dialog::backdrop
+{
+    background-color: rgba(138, 2, 57, 0.232);
+}
+/* --------------Redes-------------- */
+#redes
+{
+    margin-bottom: 20vh;
+    margin-right: 40vh;
+}
+#estrelinha-redes
+{
+    width: 35px;
+    height: 35px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: var(--letrinhadark);
+}
+#redes h1
+{
+    margin-bottom: 2vh;
+}
+#redes span
+{
+    display: flex;
+    gap: 20px;
+    margin-top: 2vh;
+}
+
+#redes img
+{
+    height: 35px;
+    width: 35px;
+}
+#estrela-bot
+{
+    width: 150px;
+    height: 150px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: AoInfinitoEAlem 4s linear infinite;
+    transition: transform 0.4s ease;
+    margin-left: 30%;
+    margin-top: 40%; 
+}
+/* ----------------------------KEYFRAMES-------------------------- */
+
+@keyframes giraECorSome
+{
+    from
+    {
+        transform: rotate(0deg);
+        background-color: #8b5cf6;
+    }
+    50%
+    {
+        background-color: #d90657;
+    }
+    75%
+    {
+        background-color: #d4c118;
+    }
+    to
+    {
+        transform: rotate(380deg);
+        background-color: #f59e0b;
+        opacity: 0;
+    }
+}
+
+@keyframes Degrade
+{
+    0%
+    {
+        background-position: 0% center;
+    }
+    100%
+    {
+        background-position: 200% center;
+    }
+}
+
+
+@keyframes apareceCor
+{
+    0%
+    {
+        opacity: 0;
+        transform: scale(0.8);
+        color: #a884fe;
+    }
+    50%
+    {
+        color: #b8002e;
+    }
+    100%
+    {
+        opacity: 1;
+        transform: scale(1);
+        color: rgb(236, 16, 60);
+    }
+}
+
+@keyframes giraECor
+{
+    from
+    {
+        transform: rotate(0deg);
+        background-color: #8b5cf6;
+    }
+    50%
+    {
+        background-color: #d90657;
+    }
+    75%
+    {
+        background-color: #d4c118;
+    }
+    to
+    {
+        transform: rotate(380deg);
+        background-color: #f59e0b;
+    }
+}
+
+@keyframes flutuando
+{
+  0%
+  {
+    transform: translateX(-50%) translateY(0px);
+  }
+  50%
+  {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  100%
+  {
+    transform: translateX(-50%) translateY(0px);
+  }
+}
+
+@keyframes apareceCorDark
+{
+    0%
+    {
+        opacity: 0;
+        transform: scale(0.8);
+        color: #a884fe;
+    }
+    50%
+    {
+        color: rgb(204, 0, 17);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: scale(1);
+        color: rgb(236, 16, 60);
+    }
+}
+
+@keyframes degradeTitulo
+{
+    0%
+    {
+        background-position: 0% 50%;
+    }
+    50%
+    {
+        background-position: 100% 50%;
+    }
+    100%
+    {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes AoInfinitoEAlem
+{
+    0%
+    {
+        transform: rotate(0deg);
+        background-color: #ffb700;
+    }
+    33%
+    {
+        background-color: #ff5e00;
+    }
+    66% {
+        background-color: #d90657;
+    }
+    100% {
+        transform: rotate(360deg);
+        background-color: #ffb700;
+    }
+}
+ /* cores interessantes #a884fe, #d90657,#d4c118, #f59e0b); */
+/* ----------------------------Dark Mode------------------------- */
+:root
+{
+    --cor-dark: #1a0910;
+    --letrinhadark: rgb(236, 16, 60);
+    --estrelinhadark: rgb(236, 16, 60);
+
+}
+
+body.darkmode #carregando
+{
+    background-color: var(--cor-dark);
+}
+
+body.darkmode
+{
+    background-color: var(--cor-dark);
+    color:rgb(236, 16, 60);
+}
+
+body.darkmode header
+{
+    background-color: var(--cor-dark);
+}
+
+body.darkmode header a
+{
+    -webkit-text-fill-color: var(--letrinhadark);
+    background: linear-gradient(135deg, #FF6B8B, #FF4D6D, #FF2A54, #E60039, #B3002D);
+    -webkit-background-clip: text; /* corta o fundo do texto */
+    transition: background-position 0.5s ease, -webkit-text-fill-color 0.3s ease;
+    padding: 5px 10px;
+    background-size: 200%;
+    text-decoration: none;
+}
+
+body.darkmode header a:hover
+{
+    -webkit-text-fill-color: transparent; /* tira a cor para o degrade aparecer */
+    background-position: right center; /* faz ele ir pro lado */
+    animation: Degrade 3s linear infinite;
+}
+
+body.darkmode #switchmode
+{
+    background-color: var(--estrelinhadark);
+}
+body.darkmode #dark
+{
+    color:#9E0424;
+}
+
+body.darkmode #menu-btn
+{
+    background-color: #1a09108e
+}
+
+body.darkmode .nomezin
+{
+    animation: apareceCorDark 1.2s 2.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+body.darkmode #caixinhas-info
+{
+    background-color: var(--cor-dark);
+}
+
+body.darkmode #Skills 
+{
+    color: rgb(93, 0, 26);
+
+}
+body.darkmode #Contato
+{
+    form
+    {
+        background-color: var(--cor-dark);
+    }
+    h3
+    {
+        color:var(--letrinhadark);
+    }
+}
+body.darkmode #sites
+{
+
+    h3
+    {
+       color:var(--letrinhadark);
+    }
+    p
+    {
+        color: #f34265;
+    }
+    svg
+    {
+        color: var(--letrinhadark);
+    }
+}
+body.darkmode .boxSite
+{
+    background-color: var(--cor-dark);
+}
+body.darkmode #Contato input, body.darkmode #Contato textarea
+{
+    background-color: var(--cor-dark);
+    border: 1px solid #f34265;
+    color: white;
+}
+
+body.darkmode dialog
+{
+    background-color: var(--cor-dark);
+    color: var(--letrinhadark);
+    box-shadow: 2px 0px 9px rgba(240, 72, 106, 0.67);
+}
+body.darkmode dialog::backdrop
+{
+    background-color: rgba(181, 113, 127, 0.146);
+}
+
+body.darkmode #redes
+{
+    h2
+    {
+        color: #f34265;
+    }
+}
+/* ----------------------------@Media------------------------- */
+@media only screen and (max-width: 768px) {
+
+    body, main
+    {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        position: relative;
+    }
+    /*-----------------HEADER------------------*/
+    header
+    {
+        width: 70%;
+        left: -100%;
+    }
+
+    header.aberto
+    {
+        left: 0;
+    }
+
+    #menu-btn
+    {
+        top: 3%;
+        left: 3%;
+        width: 45px;
+        height: 45px;
+        background-size: 70%;
+    }
+
+    header ul
+    {
+        gap: 25%;
+        font-size: 1.5rem;
+        margin-top: -7vh;
+    }
+
+    #switchmode
+    {
+        margin-left: 33%;
+        margin-top: 15%;
+        margin-bottom: -7vh;
+        width: 80px;
+        height: 80px;
+    }
+
+    /*------------------INICIO------------------*/
+    #Inicio
+    {
+        height: 50vh;
+        margin-bottom: 0%;
+    }
+
+    .nomezin
+    {
+        margin-top: 15%;
+        font-size: 3rem;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    /*------------------SOBRE MIM------------------*/
+    .quadradin
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-right: 2vh;
+        padding-left: 2vh;
+    }
+
+    #pfp
+    {
+        width: 100%;
+        height: 50vh;
+        margin-left: 0;
+        border-radius: 10px;
+    }
+
+    #direita
+    {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5vh;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #resumo p
+    {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    #caixinhas-info
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5vh;
+        margin-top: 10%;
+        width: 100%;
+    }
+
+    .info
+    {
+        width: 100%;
+        height: 20vh;
+    }
+
+    /*------------------SKILLS------------------*/
+    .tituloSec
+    {
+        font-size: 2.5rem;
+        margin-top: 30%;
+        margin-bottom: 20%;
+        text-align: center;
+    }
+
+    #Skills
+    {
+        height: 140vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10vh;
+        margin-left: 0;
+    }
+
+    #SQL, #CS, #CSS, #HTML, #JS
+    {
+        margin-left: 39.5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-info
+    {
+        width: 100%;
+        margin-top: 5%;
+        margin-left: 29%;
+    }
+
+    #particles-skills
+    {
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    /*-------------------PROJETOS------------------*/
+    #Projetos
+    {
+        margin-top: 20%;
+        margin-bottom: 40px;
+        padding: 0 15px;
+    }
+
+    #projtxt
+    {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        font-size: 1.1rem;
+        padding: 0 5px;
+        text-align: center;
+    }
+
+    #sites
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .boxSite
+    {
+        width: 100%;
+        padding: 15px;
+    }
+    /*-------------------CONTATO------------------*/
+    #Contato h3
+    {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        font-size: 1.25rem;
+    }
+
+    #dividir
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    #Contato form
+    {
+        width: 95%;
+        margin-left: 0;
+        margin-top: 5vh;
+        box-shadow: 2px 0px 9px rgb(236, 16, 60);
+    }
+
+
+    #Contato input, #Contato textarea
+    {
+        width: 40vh;
+    }
+
+    dialog
+    {
+        top: 25vh;
+        left: 5%;
+        width: 90%;
+        height: 55%;
+        h2
+        {
+            font-size: 1.7rem;
+        }
+        p
+        {
+            font-size: 1.4rem;
+            margin-top: 6vh;
+        }
+        button
+        {
+            margin-top: 8vh;
+        }
+    }
+    /*-------------------REDE------------------*/
+    #redes
+    {
+        margin-bottom: 20vh;
+        margin-top: 10vh;
+        margin-right: 0;
+    }
+    #redes h1
+    {
+        margin-bottom: 4vh;
+        margin-left: 1vh;
+    }
+    #redes span
+    {
+        display: flex;
+        gap: 20px;
+        margin-top: 2vh;
+    }
+    #redes img
+    {
+        height: 30px;
+        width: 30px;
+
+    }
+    #estrela-bot
+    {
+        width: 150px;
+        height: 150px;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        animation: AoInfinitoEAlem 4s linear infinite;
+        transition: transform 0.4s ease;
+        margin-left: 30%;
+        margin-top: 40%; 
+    }           
+}
